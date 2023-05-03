@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+      #add{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 0px auto;
+      }
+      .alam1{
+        display: flex;
+        position: relative;
+        right: -100px;
+      }
+      .button1{
+        position: relative;
+        right: 25px;
+      }
+      body{
+        background: url('https://wallpaper.dog/large/20532086.jpg') center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .white1{
+        color: white;
+        font-family: 'Merriweather', serif;
+      }
+      .shadab1{
+        position: fixed;
+        left: 5%;
+        width: 100%;
+        background: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 10px;
+        border-radius: 50px;
+      }
+      .shadab2{
+        background: rgb(224, 224, 224);
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="container shadab1">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+        </div>
+  
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 fw-bold">Features</a></li>
+          <li><a href="#" class="nav-link px-2 fw-bold">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 fw-bold">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 fw-bold">About</a></li>
+        </ul>
+  
+        <div class="col-md-3 text-end">
+          <div class="col-md-3 text-end alam1">
+            <form method="post " action="/crt_comp">
+              {% csrf_token %}
+              <button class="btn btn-lg btn-primary btn-block text-center button1" type="crt_acc" id="add" action="/crt_comp">Add</button>
+              
+          </form>
+          <form method="post" action="/logout">
+            {% csrf_token %}
+            <button class="btn btn-lg btn-primary btn-block text-center" type="crt_acc" id="add" actiion ="/logout">LOGOUT</button>
+        </form>
+        </div>
+      </header>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    {%for comp in compi%}
+    <div class="container my-5">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1 white1">{{comp.company}}</h1>
+          <p class="lead white1">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"> Make Active</button>
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Make inactive</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 fw-bold shadab2">{{comp.status}}</button>
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+            <img class="https://source.unsplash.com/1600x600/?{{comp.company}}" src="bootstrap-docs.png" alt="" width="720">
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  <br>
+    
+    <!-- <a href="/logout">LOGOUT</a> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
