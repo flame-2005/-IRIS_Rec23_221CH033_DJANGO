@@ -49,6 +49,6 @@ https://s52.freeconvert.com/task/645275924e121a9f70b448ac/127.0.0.1_8000_logout%
  - ADD ANIMATIONS FOR BETTER EXPERIENCE
 
 
-##IMAGES
+## Screenshots
 
 
