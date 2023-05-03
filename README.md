@@ -30,10 +30,7 @@ Install my-project with pip
   python manage.py runserver
   
 ```
-    
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+   
 
 
 ## Demo
