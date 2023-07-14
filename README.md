@@ -33,11 +33,6 @@ Install my-project with pip
    
 
 
-## Demo
-
-LINK to download the video
-https://s52.freeconvert.com/task/645275924e121a9f70b448ac/127.0.0.1_8000_logout%20-%20Google%20Chrome%202023-05-03%2020-12-02.mp4
-
 
 ## Future Plans
 
